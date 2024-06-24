@@ -6,4 +6,6 @@ on:
 jobs:
   call-sonarqube-scan:
     uses: kanalabs/devops_workflow/.github/workflows/sonarqube.yaml@main
-    secrets: inherit
+    with:
+       host: ${{ secrets.SONARQUBE_HOST }}
+       login: ${{ secrets.SONARQUBE_TOKEN }}
